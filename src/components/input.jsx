@@ -46,14 +46,12 @@ export default function Input() {
         console.log("Upload is " + progress + "% done");
       },
       (error) => {
-        console.log(error);
         setImageFileUploading(false);
         setImageFileUrl(null);
         setSelectedFile(null);
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
           setImageFileUrl(downloadURL);
           setImageFileUploading(false);
         });
