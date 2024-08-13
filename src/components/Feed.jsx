@@ -7,6 +7,7 @@ import {
 } from "firebase/firestore";
 
 import { app } from "../firebase";
+import Post from "./post";
 
 export default async function Feed() {
   const db = getFirestore(app);
@@ -16,6 +17,9 @@ export default async function Feed() {
   querySnapshot.forEach((doc) => {
     data.push({ id: doc.id, ...doc.data() });
   });
-  console.log(data);
-  return <div>Feed</div>;
+  return <div>
+    {data.map((post) => {
+      <Post key={post.id} post={post} id={post.id} />
+    })}
+  </div>;
 }
