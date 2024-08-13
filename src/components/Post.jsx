@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HiDotsCircleHorizontal } from "react-icons/hi";
+import Icons from "./Icons";
 
 export default function Post({ post, id }) {
   return (
@@ -24,6 +25,7 @@ export default function Post({ post, id }) {
         <Link href={`/posts/${id}`}>
             <img src={post?.image} alt='post-img' className="rounded-2xl mr-2 cursor-pointer" />
         </Link>
+        <Icons />
       </div>
     </div>
   );
