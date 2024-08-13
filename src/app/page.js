@@ -1,3 +1,4 @@
+import Feed from "@/components/Feed";
 import Input from "@/components/input";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         <h2 className="text-lg sm:text-xl font-bold">Home</h2>
       </div>
       <Input />
+      <Feed />
     </div>
   );
 };
